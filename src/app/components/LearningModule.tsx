@@ -512,7 +512,7 @@ export function LearningModule({ onNavigateToGame }: Props) {
                               className="w-full flex items-center justify-between p-3 text-left"
                             >
                               <span className="text-sm font-medium text-amber-800">
-                                📌 Tahukah Anda?
+                                Did You Know?
                               </span>
                               {expandedNote ? (
                                 <ChevronUp className="w-4 h-4 text-amber-600" />
