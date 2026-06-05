@@ -403,8 +403,8 @@ export function LearningModule({ onNavigateToGame }: Props) {
                     }`}
                   >
                     {completedLessons.includes(currentLesson)
-                      ? "✓ Selesai"
-                      : "Sedang Belajar"}
+                      ? "✓ Finish"
+                      : "In Progress"}
                   </motion.div>
                 </div>
               </CardHeader>
@@ -446,7 +446,7 @@ export function LearningModule({ onNavigateToGame }: Props) {
                             <div className="flex items-center gap-2 mb-3">
                               <ListChecks className="w-5 h-5 text-indigo-600" />
                               <h3 className="font-semibold text-gray-900">
-                                Poin-poin Utama
+                                Key Points
                               </h3>
                             </div>
                             <div className="space-y-2">

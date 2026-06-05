@@ -257,7 +257,7 @@ export function MemoryGame() {
             className="gap-2 px-8"
           >
             <RefreshCw className="w-4 h-4" />
-            Mulai Ulang
+            Restart
           </Button>
         </motion.div>
       </div>
@@ -287,10 +287,8 @@ export function MemoryGame() {
                 >
                   🏆
                 </motion.div>
-                <h2 className="text-2xl font-bold mb-1">Hebat!</h2>
-                <p className="text-white/80 text-sm">
-                  Semua pasangan kosakata BIPA berhasil ditemukan!
-                </p>
+                <h2 className="text-2xl font-bold mb-1">Amazing!</h2>
+                <p className="text-white/80 text-sm">All pairs found!</p>
 
                 <div className="flex justify-center gap-1 mt-4">
                   {[1, 2, 3].map((s) => (
@@ -336,7 +334,7 @@ export function MemoryGame() {
                   size="lg"
                 >
                   <RefreshCw className="w-4 h-4 mr-2" />
-                  Main Lagi
+                  Play Again
                 </Button>
               </div>
             </motion.div>
