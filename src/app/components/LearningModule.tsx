@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import coreVideo from "../../assets/videos/video-modul1.mp4";
+import tutorialVideo from "../../assets/videos/video-modul2.mp4";
 import {
   BookOpen,
   CheckCircle2,
@@ -51,6 +53,7 @@ interface LessonData {
   steps?: Step[];
   questions?: QuizQuestion[];
   videoUrl?: string;
+  videoSrc?: string;
 }
 
 const lessons: LessonData[] = [
@@ -58,8 +61,8 @@ const lessons: LessonData[] = [
     id: 1,
     type: "content",
     title: "Core Material",
-    duration: "10 minutes",
-    videoUrl: "a2ZSGCeaL4U",
+    duration: "8 minutes",
+    videoSrc: coreVideo,
     description:
       "A mask, or 'topeng' in Indonesian, is an important part of Indonesia's cultural heritage. In this lesson, you will learn about the definition of masks, their historical background, their functions in society, and several traditional masks found across Indonesia.",
     keyPoints: [
@@ -79,8 +82,8 @@ const lessons: LessonData[] = [
     id: 2,
     type: "video",
     title: "Video Tutorial",
-    duration: "8 minutes",
-    videoUrl: "a2ZSGCeaL4U", // Ditambahkan agar video tutorial juga memiliki link
+    duration: "5 minutes",
+    videoSrc: tutorialVideo,
     description:
       "Follow these learning steps to better understand the topic of Indonesian traditional masks. Watch the video carefully and complete each stage before taking the evaluation quiz.",
     steps: [
@@ -423,15 +426,13 @@ export function LearningModule({ onNavigateToGame }: Props) {
                     {(lesson.type === "content" || lesson.type === "video") && (
                       <div className="space-y-5">
                         {/* Video Player - Langsung Tampil */}
-                        {lesson.videoUrl && (
-                          <div className="aspect-video bg-black rounded-2xl shadow-lg overflow-hidden relative">
-                            <iframe
-                              className="absolute top-0 left-0 w-full h-full"
-                              src={`https://www.youtube.com/embed/${lesson.videoUrl.split("?")[0]}`}
-                              title="YouTube video player"
-                              frameBorder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              allowFullScreen
+                        {lesson.videoSrc && (
+                          <div className="aspect-video bg-black rounded-2xl shadow-lg overflow-hidden">
+                            <video
+                              src={lesson.videoSrc}
+                              className="w-full h-full"
+                              controls
+                              preload="metadata"
                             />
                           </div>
                         )}
