@@ -667,9 +667,7 @@ export function LearningModule({ onNavigateToGame }: Props) {
                       className={`w-2 h-2 rounded-full transition-all ${
                         i === currentLesson
                           ? "w-6 bg-indigo-600"
-                          : completedLessons.includes(i)
-                            ? "bg-green-400"
-                            : "bg-gray-300"
+                          : "bg-gray-300"
                       }`}
                     />
                   ))}
@@ -683,7 +681,7 @@ export function LearningModule({ onNavigateToGame }: Props) {
                     <span className="hidden sm:inline">
                       {completedLessons.includes(currentLesson)
                         ? "Next"
-                        : "Complete & Next"}
+                        : "Next"}
                     </span>
                     <ChevronRight className="w-4 h-4" />
                   </Button>
